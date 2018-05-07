@@ -97,10 +97,16 @@ function calculate_holdout() {
   total_group_size = input_group_size.value;
   holdout = input_holdout.value/100;
 
+  min_lift = new Array();
+
   for (i1 in vcpa) {
     for (i2 in vinvestment) {
       power = power_calc(conversion_rate_control, vcpa[i1], vinvestment[i2], total_group_size, holdout);
       vpower1.push(power);
+      if (power>=0.8) {
+        lift = vinvestment[i2]/vcpa[i1]/(conversion_rate_control*total_group_size*(1-holdout));
+        min_lift.push(lift);
+      }
     }
     vpower[i1] = vpower1;
     vpower1 = new Array();
