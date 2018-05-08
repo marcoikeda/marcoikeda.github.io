@@ -4,6 +4,15 @@
 
   <link rel="stylesheet" href="bootstrap.css" media="screen">
   <link rel="stylesheet" href="min.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118901001-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-118901001-1');
+  </script>
 </head>
 
 <body>
@@ -99,7 +108,7 @@
             </div>
           </div>
           <div class="bs-component">
-            <button type="button" class="btn btn-secondary btn-sm btn-block" onclick="calculate()">
+            <button type="button" class="btn btn-secondary btn-sm btn-block" onclick="calculate();ga('send', 'event', 'Calculate'); ">
               Calculate!
             </button>
           </div>
